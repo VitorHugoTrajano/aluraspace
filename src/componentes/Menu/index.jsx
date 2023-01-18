@@ -1,0 +1,25 @@
+import React from 'react'
+import icones from './icones.json'
+import styles from './Menu.module.scss'
+
+export default function Menu () {
+    return (
+        <nav className={styles.menu}>
+            <ul className={styles.menu__lista} >
+                {icones.map((icone) => {
+                    return (
+                        <li key={icone.id} className={styles.menu__item}>
+                            <img 
+                                src={icone.imagem} 
+                                alt={icone.descricao}
+                            />
+                            <a href={icone.endereco}>
+                                {icone.titulo}
+                            </a>
+                        </li>
+                    );
+                })}
+            </ul>
+        </nav>
+    )
+}
